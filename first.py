@@ -9,6 +9,10 @@ class Car:
         print("I'm going {} kph".format(self.speed))
 
     def accelerate(self):
+        """
+        This method increases the current speed by 5 kmph
+        :return:
+        """
         self.speed += 5
 
     def brake(self):

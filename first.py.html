@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>first.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6897bb;}
+.s3 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+first.py</font>
+</center></td></tr></table>
+<pre><span class="s0">class </span><span class="s1">Car:</span>
+
+    <span class="s0">def </span><span class="s1">__init__(self</span><span class="s0">, </span><span class="s1">speed=</span><span class="s2">0</span><span class="s1">):</span>
+        <span class="s1">self.speed = speed</span>
+        <span class="s1">self.odometer = </span><span class="s2">0</span>
+        <span class="s1">self.time = </span><span class="s2">0</span>
+
+    <span class="s0">def </span><span class="s1">say_state(self):</span>
+        <span class="s1">print(</span><span class="s3">&quot;I'm going {} kph&quot;</span><span class="s1">.format(self.speed))</span>
+
+    <span class="s0">def </span><span class="s1">accelerate(self):</span>
+        <span class="s1">self.speed += </span><span class="s2">5</span>
+
+    <span class="s0">def </span><span class="s1">brake(self):</span>
+        <span class="s1">self.speed -= </span><span class="s2">5</span>
+
+    <span class="s0">def </span><span class="s1">step(self):</span>
+        <span class="s1">self.odometer += self.speed</span>
+        <span class="s1">self.time += </span><span class="s2">1</span>
+
+    <span class="s0">def </span><span class="s1">average_speed(self):</span>
+        <span class="s0">if </span><span class="s1">self.time != </span><span class="s2">0</span><span class="s1">:</span>
+            <span class="s0">return </span><span class="s1">self.odometer/self.time</span>
+        <span class="s0">else</span><span class="s1">:</span>
+            <span class="s0">pass</span>
+
+
+<span class="s0">if </span><span class="s1">__name__ == </span><span class="s3">'__main__'</span><span class="s1">:</span>
+
+    <span class="s1">my_car = Car()</span>
+    <span class="s1">print(</span><span class="s3">&quot;I'm a car!&quot;</span><span class="s1">)</span>
+    <span class="s0">while True</span><span class="s1">:</span>
+        <span class="s1">action = input(</span><span class="s3">&quot;What should I do? [A]ccelerate, [B]rake, &quot;</span>
+                 <span class="s3">&quot;show [O]dometer, or show average [S]peed?&quot;</span><span class="s1">).upper()</span>
+        <span class="s0">if </span><span class="s1">action </span><span class="s0">not in </span><span class="s3">&quot;ABOS&quot; </span><span class="s0">or </span><span class="s1">len(action) != </span><span class="s2">1</span><span class="s1">:</span>
+            <span class="s1">print(</span><span class="s3">&quot;I don't know how to do that&quot;</span><span class="s1">)</span>
+            <span class="s0">continue</span>
+        <span class="s0">if </span><span class="s1">action == </span><span class="s3">'A'</span><span class="s1">:</span>
+            <span class="s1">my_car.accelerate()</span>
+        <span class="s0">elif </span><span class="s1">action == </span><span class="s3">'B'</span><span class="s1">:</span>
+            <span class="s1">my_car.brake()</span>
+        <span class="s0">elif </span><span class="s1">action == </span><span class="s3">'O'</span><span class="s1">:</span>
+            <span class="s1">print (</span><span class="s3">&quot;The car has drivin {} kilometers&quot;</span><span class="s1">.format(my_car.odometer))</span>
+        <span class="s0">elif </span><span class="s1">action == </span><span class="s3">'S'</span><span class="s1">:</span>
+            <span class="s1">print(</span><span class="s3">&quot;The car's average speed was {} kph&quot;</span><span class="s1">.format(my_car.average_speed()))</span>
+        <span class="s1">my_car.step()</span>
+        <span class="s1">my_car.say_state()</span></pre>
+</body>
+</html>
